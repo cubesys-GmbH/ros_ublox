@@ -556,7 +556,7 @@ bool Gps::setPpp(bool enable, float protocol_version) {
 
   ublox_msgs::msg::CfgNAVX5 msg;
   msg.use_ppp = enable;
-  if(protocol_version >= 18) {
+  if(protocol_version >= 18.0) {
     msg.version = 2;
   }
   msg.mask1 = ublox_msgs::msg::CfgNAVX5::MASK1_PPP;
@@ -575,7 +575,7 @@ bool Gps::setUseAdr(bool enable, float protocol_version) {
 
   ublox_msgs::msg::CfgNAVX5 msg;
   msg.use_adr = enable;
-  if(protocol_version >= 18) {
+  if(protocol_version >= 18.0) {
     msg.version = 2;
   }
   msg.mask2 = ublox_msgs::msg::CfgNAVX5::MASK2_ADR;

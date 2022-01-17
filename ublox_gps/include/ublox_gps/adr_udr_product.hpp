@@ -62,10 +62,10 @@ class AdrUdrProduct final : public virtual ComponentInterface {
   void subscribe(std::shared_ptr<ublox_gps::Gps> gps) override;
 
  private:
+  float protocol_version_;
+
   //! Whether or not to enable dead reckoning
   bool use_adr_;
-
-  float protocol_version_;
 
   sensor_msgs::msg::Imu imu_;
   sensor_msgs::msg::TimeReference t_ref_;
