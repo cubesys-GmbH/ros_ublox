@@ -288,12 +288,13 @@ class Gps final {
   /**
    * @brief Enable or disable PPP (precise-point-positioning).
    * @param enable If true, enable PPP.
+   * @param protocol_version Protocol version.
    * @return true on ACK, false on other conditions.
    *
    * @note This is part of the expert settings. It is recommended you check
    * the ublox manual first.
    */
-  bool setPpp(bool enable);
+  bool setPpp(bool enable, float protocol_version);
 
   /**
    * @brief Set the DGNSS mode (see CfgDGNSS message for details).
@@ -305,9 +306,10 @@ class Gps final {
   /**
    * @brief Enable or disable ADR (automotive dead reckoning).
    * @param enable If true, enable ADR.
+   * @param protocol_version Protocol version.
    * @return true on ACK, false on other conditions.
    */
-  bool setUseAdr(bool enable);
+  bool setUseAdr(bool enable, float protocol_version);
 
   /**
    * @brief Configure the U-Blox to UTC time
