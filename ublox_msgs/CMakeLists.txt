@@ -41,6 +41,7 @@ set(msg_files
   "msg/CfgRST.msg"
   "msg/CfgSBAS.msg"
   "msg/CfgTMODE3.msg"
+  "msg/CfgTP5.msg"
   "msg/CfgUSB.msg"
   "msg/EsfINS.msg"
   "msg/EsfMEAS.msg"

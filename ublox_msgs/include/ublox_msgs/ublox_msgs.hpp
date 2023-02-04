@@ -83,6 +83,7 @@
 #include <ublox_msgs/msg/cfg_rst.hpp>
 #include <ublox_msgs/msg/cfg_sbas.hpp>
 #include <ublox_msgs/msg/cfg_tmode3.hpp>
+#include <ublox_msgs/msg/cfg_tp5.hpp>
 #include <ublox_msgs/msg/cfg_usb.hpp>
 
 #include <ublox_msgs/msg/upd_sos.hpp>

@@ -736,6 +736,12 @@ bool UbloxNode::configureUblox() {
         ss << "Failed to set dead reckoning limit: " << dr_limit_ << ".";
         throw std::runtime_error(ss.str());
       }
+
+      RCLCPP_DEBUG(this->get_logger(), "Turning on Timepulse");
+      if (!gps_->configTimepulse()) {
+        throw std::runtime_error("Failed turning on Timepulse");
+      }
+
       if (getRosBoolean(this, "dat.set") && !gps_->configure(cfg_dat_)) {
         throw std::runtime_error("Failed to set user-defined datum.");
       }

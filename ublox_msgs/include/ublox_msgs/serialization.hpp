@@ -895,6 +895,48 @@ struct UbloxSerializer<ublox_msgs::msg::CfgTMODE3_<ContainerAllocator> > {
 };
 
 template <typename ContainerAllocator>
+struct UbloxSerializer<ublox_msgs::msg::CfgTP5_<ContainerAllocator> > {
+  inline static void read(const uint8_t *data, uint32_t count,
+                          ublox_msgs::msg::CfgTP5_<ContainerAllocator> &m) {
+    UbloxIStream stream(const_cast<uint8_t *>(data), count);
+    stream.next(m.tp_idx);
+    stream.next(m.version);
+    stream.next(m.reserved1[0]);
+    stream.next(m.reserved1[1]);
+    stream.next(m.ant_cable_delay);
+    stream.next(m.rf_group_delay);
+    stream.next(m.freq_period);
+    stream.next(m.freq_period_logic);
+    stream.next(m.pulse_len_ratio);
+    stream.next(m.pulse_len_ratio_lock);
+    stream.next(m.user_config_delay);
+    stream.next(m.flags);
+  }
+
+  inline static uint32_t serializedLength(const ublox_msgs::msg::CfgTP5_<ContainerAllocator> &m) {
+    (void)m;
+    return 32;
+  }
+
+  inline static void write(uint8_t *data, uint32_t size,
+                           const ublox_msgs::msg::CfgTP5_<ContainerAllocator> &m) {
+    UbloxOStream stream(data, size);
+    stream.next(m.tp_idx);
+    stream.next(m.version);
+    stream.next(m.reserved1[0]);
+    stream.next(m.reserved1[1]);
+    stream.next(m.ant_cable_delay);
+    stream.next(m.rf_group_delay);
+    stream.next(m.freq_period);
+    stream.next(m.freq_period_logic);
+    stream.next(m.pulse_len_ratio);
+    stream.next(m.pulse_len_ratio_lock);
+    stream.next(m.user_config_delay);
+    stream.next(m.flags);
+  }
+};
+
+template <typename ContainerAllocator>
 struct UbloxSerializer<ublox_msgs::msg::EsfINS_<ContainerAllocator> > {
   inline static void read(const uint8_t *data, uint32_t count,
                           ublox_msgs::msg::EsfINS_<ContainerAllocator> & m) {

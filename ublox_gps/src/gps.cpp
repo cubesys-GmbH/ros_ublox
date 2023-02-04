@@ -514,6 +514,29 @@ bool Gps::disableTmode3() {
   return configure(tmode3);
 }
 
+bool Gps::configTimepulse() {
+  RCLCPP_DEBUG(logger_, "Configuring Timepulse");
+
+  ublox_msgs::msg::CfgTP5 msg;
+  
+  msg.tp_idx = 0;
+  msg.version = 0x01;
+  
+  msg.freq_period = 1;  // 1 Hz
+  msg.pulse_len_ratio = 100 * 1000; // 100 ms
+  
+  // enable, lock/sync with gps, polarity rising edge, grid to GPS
+  msg.flags =   1u << ublox_msgs::msg::CfgTP5::FLAGS_ACTIVE_MASK 
+              | 1u << ublox_msgs::msg::CfgTP5::FLAGS_LOCK_GNSS_FREQ_MASK
+              | 1u << ublox_msgs::msg::CfgTP5::FLAGS_IS_FREQ_MASK
+              | 1u << ublox_msgs::msg::CfgTP5::FLAGS_IS_LENGTH_MASK
+              | 1u << ublox_msgs::msg::CfgTP5::FLAGS_ALIGN_TO_TOW_MASK
+              | 1u << ublox_msgs::msg::CfgTP5::FLAGS_POLARITY_MASK
+              | 1u << ublox_msgs::msg::CfgTP5::FLAGS_GRID_TO_UTC_GNSS_MASK;
+
+  return configure(msg);
+}
+
 bool Gps::setRate(uint8_t class_id, uint8_t message_id, uint8_t rate) {
   RCLCPP_DEBUG_EXPRESSION(logger_, debug_ >= 2, "Setting rate 0x%02x, 0x%02x, %u", class_id,
                           message_id, rate);
