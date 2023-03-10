@@ -180,7 +180,7 @@ void UbloxNode::getRosParams() {
   nh->param("dynamic_model", dynamic_model_, std::string("portable"));
   nh->param("fix_mode", fix_mode_, std::string("auto"));
   getRosUint("dr_limit", dr_limit_, 0); // Dead reckoning limit
-  getRosUint("enable_auto_imu_mount", enable_auto_imu_mount_, false); // Dead reckoning limit
+  nh->param("enable_auto_imu_mount", enable_auto_imu_mount_, false); // Dead reckoning limit
 
   if (enable_ppp_)
     ROS_WARN("Warning: PPP is enabled - this is an expert setting.");
