@@ -180,6 +180,7 @@ void UbloxNode::getRosParams() {
   nh->param("dynamic_model", dynamic_model_, std::string("portable"));
   nh->param("fix_mode", fix_mode_, std::string("auto"));
   getRosUint("dr_limit", dr_limit_, 0); // Dead reckoning limit
+  getRosUint("enable_auto_imu_mount", enable_auto_imu_mount_, false); // Dead reckoning limit
 
   if (enable_ppp_)
     ROS_WARN("Warning: PPP is enabled - this is an expert setting.");
@@ -475,6 +476,10 @@ bool UbloxNode::configureUblox() {
         throw std::runtime_error("Failed to set model: " + dynamic_model_ + ".");
       if (!gps.setFixMode(fmode_))
         throw std::runtime_error("Failed to set fix mode: " + fix_mode_ + ".");
+      if (!gps.setAutoImuMountAlignment(enable_auto_imu_mount_))
+        throw std::runtime_error(std::string("Failed to ") +
+                                ((enable_ppp_) ? "enable" : "disable")
+                                + " auto imu alignment.");
       if (!gps.setDeadReckonLimit(dr_limit_)) {
         std::stringstream ss;
         ss << "Failed to set dead reckoning limit: " << dr_limit_ << ".";

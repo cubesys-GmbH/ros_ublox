@@ -285,6 +285,8 @@ class Gps {
    */
   bool setDeadReckonLimit(uint8_t limit);
 
+  bool setAutoImuMountAlignment(bool enable);
+
   /**
    * @brief Enable or disable PPP (precise-point-positioning).
    * @param enable If true, enable PPP.

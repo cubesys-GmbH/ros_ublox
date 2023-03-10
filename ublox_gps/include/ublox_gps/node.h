@@ -666,6 +666,8 @@ class UbloxNode : public virtual ComponentInterface {
   ublox_msgs::CfgCFG save_;
   //! rate for TIM-TM2
   uint8_t tim_rate_;
+  //! Auto IMU Mounting Alignment on/off
+  bool enable_auto_imu_mount_;
 
   //! raw data stream logging
   RawDataStreamPa rawDataStreamPa_;

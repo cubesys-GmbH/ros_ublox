@@ -538,6 +538,18 @@ bool Gps::setDeadReckonLimit(uint8_t limit) {
   return configure(msg);
 }
 
+bool Gps::setAutoImuMountAlignment(bool enable) {
+  ROS_DEBUG("%s Setting IMU Auto Alignment", (enable ? "Enabling" : "Disabling"));
+
+  ublox_msgs::CfgESFALG msg;
+  if (enable)
+    msg.bitfield = ublox_msgs::CfgESFALG::AUTO_IMU_MOUNT_ENABLE;
+  else
+    msg.bitfield = ublox_msgs::CfgESFALG::AUTO_IMU_MOUNT_DISABLE;
+    
+  return configure(msg);
+}
+
 bool Gps::setPpp(bool enable, float protocol_version) {
   ROS_DEBUG("%s PPP", (enable ? "Enabling" : "Disabling"));
 
