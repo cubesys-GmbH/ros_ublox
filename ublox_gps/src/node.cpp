@@ -1376,6 +1376,12 @@ void AdrUdrProduct::subscribe() {
   if (enabled["hnr_pvt"])
     gps.subscribe<ublox_msgs::HnrPVT>(boost::bind(
         publish<ublox_msgs::HnrPVT>, _1, "hnrpvt"), kSubscribeRate);
+
+  // Subscribe to HNR INS messages
+  nh->param("publish/hnr/ins", enabled["hnr_ins"], true);
+  if (enabled["hnr_ins"])
+    gps.subscribe<ublox_msgs::HnrINS>(boost::bind(
+        publish<ublox_msgs::HnrINS>, _1, "hnrins"), kSubscribeRate);
 }
 
 void AdrUdrProduct::callbackEsfMEAS(const ublox_msgs::EsfMEAS &m) {
