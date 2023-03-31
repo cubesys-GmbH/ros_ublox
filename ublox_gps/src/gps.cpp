@@ -509,17 +509,22 @@ bool Gps::configTimepulse() {
   msg.tp_idx = 0;
   msg.version = 0x01;
 
+  msg.ant_cable_delay = 0;
+  msg.rf_group_delay = 0;
+
   msg.freq_period = 1;  // 1 Hz
   msg.pulse_len_ratio = 100 * 1000; // 100 ms
 
+  msg.user_config_delay = 0;
+
   // enable, lock/sync with gps, polarity rising edge, grid to GPS
-  msg.flags =   1u << CfgTP5::FLAGS_ACTIVE_MASK 
-              | 1u << CfgTP5::FLAGS_LOCK_GNSS_FREQ_MASK
-              | 1u << CfgTP5::FLAGS_IS_FREQ_MASK
-              | 1u << CfgTP5::FLAGS_IS_LENGTH_MASK
-              | 1u << CfgTP5::FLAGS_ALIGN_TO_TOW_MASK
-              | 1u << CfgTP5::FLAGS_POLARITY_MASK
-              | 1u << CfgTP5::FLAGS_GRID_TO_UTC_GNSS_MASK;
+  msg.flags =   1u << CfgTP5::FLAGS_ACTIVE_POS 
+              | 1u << CfgTP5::FLAGS_LOCK_GNSS_FREQ_POS
+              | 1u << CfgTP5::FLAGS_IS_FREQ_POS
+              | 1u << CfgTP5::FLAGS_IS_LENGTH_POS
+              | 1u << CfgTP5::FLAGS_ALIGN_TO_TOW_POS
+              | 1u << CfgTP5::FLAGS_POLARITY_POS
+              | 1u << CfgTP5::FLAGS_GRID_TO_UTC_GNSS_POS;
 
   return configure(msg);
 }

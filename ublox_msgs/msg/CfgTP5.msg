@@ -23,12 +23,12 @@ uint32 pulse_len_ratio_lock     # us or 2^-32   # Pulse length or duty cycle whe
 int32 user_config_delay         # ns    # User-configurable time pulse delay
 uint32 flags                    # -     # Configuration flags
 
-uint32 FLAGS_ACTIVE_MASK = 0
-uint32 FLAGS_LOCK_GNSS_FREQ_MASK = 1
-uint32 FLAGS_LOCKED_OTHER_SET_MASK = 2
-uint32 FLAGS_IS_FREQ_MASK = 3
-uint32 FLAGS_IS_LENGTH_MASK = 4
-uint32 FLAGS_ALIGN_TO_TOW_MASK = 5
-uint32 FLAGS_POLARITY_MASK = 6
-uint32 FLAGS_GRID_TO_UTC_GNSS_MASK = 7 
-uint32 FLAGS_SYNC_MODE_MASK = 11
+uint32 FLAGS_ACTIVE_POS = 0
+uint32 FLAGS_LOCK_GNSS_FREQ_POS = 1
+uint32 FLAGS_LOCKED_OTHER_SET_POS = 2
+uint32 FLAGS_IS_FREQ_POS = 3
+uint32 FLAGS_IS_LENGTH_POS = 4
+uint32 FLAGS_ALIGN_TO_TOW_POS = 5
+uint32 FLAGS_POLARITY_POS = 6
+uint32 FLAGS_GRID_TO_UTC_GNSS_POS = 10
+uint32 FLAGS_SYNC_MODE_POS = 13
