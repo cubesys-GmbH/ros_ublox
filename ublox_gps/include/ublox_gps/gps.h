@@ -255,6 +255,13 @@ class Gps {
    */
   bool disableTmode3();
 
+    /**
+   * @brief Configures Timepulse to 1 s grid aligned with GPS sync with
+   * pulse width of 100 ms
+   * @return true on ACK, false on other conditions.
+   */
+  bool configTimepulse();
+
   /**
    * @brief Set the rate at which the U-Blox device sends the given message
    * @param class_id the class identifier of the message

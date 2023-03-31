@@ -180,7 +180,8 @@ void UbloxNode::getRosParams() {
   nh->param("dynamic_model", dynamic_model_, std::string("portable"));
   nh->param("fix_mode", fix_mode_, std::string("auto"));
   getRosUint("dr_limit", dr_limit_, 0); // Dead reckoning limit
-  nh->param("enable_auto_imu_mount", enable_auto_imu_mount_, false); // Dead reckoning limit
+  nh->param("enable_auto_imu_mount", enable_auto_imu_mount_, false); 
+  nh->param("enable_timepulse", enable_timepulse_, false); 
 
   if (enable_ppp_)
     ROS_WARN("Warning: PPP is enabled - this is an expert setting.");
@@ -484,6 +485,13 @@ bool UbloxNode::configureUblox() {
         std::stringstream ss;
         ss << "Failed to set dead reckoning limit: " << dr_limit_ << ".";
         throw std::runtime_error(ss.str());
+      }
+      if(enable_timepulse_)
+      {
+        ROS_DEBUG("Turning on Timepulse");
+        if (!gps.configTimepulse()) {
+          throw std::runtime_error("Failed turning on Timepulse");
+        }
       }
       if (set_dat_ && !gps.configure(cfg_dat_))
         throw std::runtime_error("Failed to set user-defined datum.");

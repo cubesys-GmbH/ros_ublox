@@ -159,6 +159,8 @@ DECLARE_UBLOX_MESSAGE(ublox_msgs::Class::CFG, ublox_msgs::Message::CFG::RST,
                       ublox_msgs, CfgRST);
 DECLARE_UBLOX_MESSAGE(ublox_msgs::Class::CFG, ublox_msgs::Message::CFG::TMODE3, 
                       ublox_msgs, CfgTMODE3);
+DECLARE_UBLOX_MESSAGE(ublox_msgs::Class::CFG, ublox_msgs::Message::CFG::TP5, 
+                      ublox_msgs, CfgTP5);
 DECLARE_UBLOX_MESSAGE(ublox_msgs::Class::CFG, ublox_msgs::Message::CFG::USB, 
                       ublox_msgs, CfgUSB);
 

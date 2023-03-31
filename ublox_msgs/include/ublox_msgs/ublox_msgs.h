@@ -86,6 +86,7 @@
 #include <ublox_msgs/CfgRST.h>
 #include <ublox_msgs/CfgSBAS.h>
 #include <ublox_msgs/CfgTMODE3.h>
+#include <ublox_msgs/CfgTP5.h>
 #include <ublox_msgs/CfgUSB.h>
 
 #include <ublox_msgs/UpdSOS.h>
@@ -228,6 +229,7 @@ namespace Message {
     static const uint8_t RST = CfgRST::MESSAGE_ID;
     static const uint8_t SBAS = CfgSBAS::MESSAGE_ID;
     static const uint8_t TMODE3 = CfgTMODE3::MESSAGE_ID;
+    static const uint8_t TP5 = CfgTP5::MESSAGE_ID;
     static const uint8_t USB = CfgUSB::MESSAGE_ID;
   }
 

@@ -668,6 +668,8 @@ class UbloxNode : public virtual ComponentInterface {
   uint8_t tim_rate_;
   //! Auto IMU Mounting Alignment on/off
   bool enable_auto_imu_mount_;
+  // Timepulse TP5
+  bool enable_timepulse_;
 
   //! raw data stream logging
   RawDataStreamPa rawDataStreamPa_;
