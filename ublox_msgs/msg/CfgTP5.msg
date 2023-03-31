@@ -11,9 +11,8 @@ uint8 version                   # -     # Message version (0x01 for this version
 uint8 reserved1_0               # -     # reserved [0]
 uint8 reserved1_1               # -     # reserved [0]
 
-
-uint16 ant_cable_delay          # ns    # Antenna cable delay
-uint16 rf_group_delay           # ns    # RF group delay
+int16 ant_cable_delay           # ns    # Antenna cable delay
+int16 rf_group_delay            # ns    # RF group delay
 
 uint32 freq_period              # Hz or us  # Frequency or period time, depending on setting of bit 'isFreq'
 uint32 freq_period_logic        # Hz or us  # Frequency or period time when locked to GNSS time, only used if 'lockedOtherSet' is set
@@ -21,7 +20,7 @@ uint32 freq_period_logic        # Hz or us  # Frequency or period time when lock
 uint32 pulse_len_ratio          # us or 2^-32   # Pulse length or duty cycle, depending on 'isLength'
 uint32 pulse_len_ratio_lock     # us or 2^-32   # Pulse length or duty cycle when locked to GNSS time, only used if 'lockedOtherSet' is set
 
-uint32 user_config_delay        # ns    # User-configurable time pulse delay
+int32 user_config_delay         # ns    # User-configurable time pulse delay
 uint32 flags                    # -     # Configuration flags
 
 uint32 FLAGS_ACTIVE_MASK = 0

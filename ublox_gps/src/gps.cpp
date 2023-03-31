@@ -437,7 +437,7 @@ bool Gps::configRtcm(std::vector<uint8_t> ids, std::vector<uint8_t> rates) {
 }
 
 bool Gps::configSbas(bool enable, uint8_t usage, uint8_t max_sbas) {
-  ROS_DEBUG("Configuring SBAS: usage %u, max_sbas %u", usage, max_sbas);
+  ROS_DEBUG("Configuring SBAS: enable %u usage %u, max_sbas %u", enable, usage, max_sbas);
 
   ublox_msgs::CfgSBAS msg;
   msg.mode = (enable ? CfgSBAS::MODE_ENABLED : 0);

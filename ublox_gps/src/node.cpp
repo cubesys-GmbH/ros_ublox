@@ -490,7 +490,8 @@ bool UbloxNode::configureUblox() {
       {
         ROS_DEBUG("Turning on Timepulse");
         if (!gps.configTimepulse()) {
-          throw std::runtime_error("Failed turning on Timepulse");
+            ROS_ERROR("Error turning on Timepulse");
+            // throw std::runtime_error("Failed turning on Timepulse");
         }
       }
       if (set_dat_ && !gps.configure(cfg_dat_))
