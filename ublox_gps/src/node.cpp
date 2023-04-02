@@ -541,9 +541,6 @@ void UbloxNode::configureInf() {
     msg.blocks.push_back(block);
   }
 
-ROS_DEBUG("Configuring TP2 messages");
-  if (!gps.configTimepulse())
-    ROS_WARN("Failed to configure TP2 messages");
   ROS_DEBUG("Configuring INF messages");
   if (!gps.configure(msg))
     ROS_WARN("Failed to configure INF messages");

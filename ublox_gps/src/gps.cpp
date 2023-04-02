@@ -506,10 +506,10 @@ bool Gps::configTimepulse() {
 
   CfgTP5 msg;
 
-  msg.tp_idx = 0;
+  msg.tp_idx = 1;
   msg.version = 0x01;
 
-  msg.ant_cable_delay = 0;
+  msg.ant_cable_delay = 50;
   msg.rf_group_delay = 0;
 
   msg.freq_period = 1;  // 1 Hz
