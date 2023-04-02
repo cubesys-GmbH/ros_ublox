@@ -9,7 +9,7 @@ uint8 version                   # -     # Message version (0x01 for this version
 
 # no array no serialization :)
 uint8 reserved1_0               # -     # reserved [0]
-uint8 reserved1_1               # -     # reserved [0]
+uint8 reserved1_1               # -     # reserved [1]
 
 int16 ant_cable_delay           # ns    # Antenna cable delay
 int16 rf_group_delay            # ns    # RF group delay
