@@ -739,7 +739,7 @@ bool UbloxNode::configureUblox() {
 
       RCLCPP_DEBUG(this->get_logger(), "Turning on Timepulse");
       if (!gps_->configTimepulse()) {
-        throw std::runtime_error("Failed turning on Timepulse");
+        //throw std::runtime_error("Failed turning on Timepulse");
       }
 
       if (getRosBoolean(this, "dat.set") && !gps_->configure(cfg_dat_)) {
