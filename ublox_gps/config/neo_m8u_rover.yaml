@@ -1,6 +1,5 @@
 # Configuration Settings for NEO-M8U device
-
-ublox_gps_node:
+/**:
   ros__parameters:
     debug: 1                    # Range 0-4 (0 means no debug statements will print)
 
