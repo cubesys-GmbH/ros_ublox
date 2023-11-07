@@ -36,7 +36,7 @@ The `ublox_gps` node supports the following parameters for all products and firm
     * `airborne2`: Airborne, max acceleration = 2G
     * `airborne4`: Airborne, max acceleration = 4G
     * `wristwatch`
-* `fix_mode`: Type of fixes supported: `2d`, `3d` or `both`.
+* `fix_mode`: Type of fixes supported: `2d`, `3d` or `auto`.
 * `dr_limit`: Max time in seconds to use dead reckoning after signal is lost. Defaults to 0.
 * `dat`: Configuring the datum type (optional). See the CfgDAT message.
     * `dat/set`: If true, the node will the datum based on the parameters below (required if true). Defaults to false. 
