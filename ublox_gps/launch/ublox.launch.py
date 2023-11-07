@@ -7,7 +7,6 @@ def generate_launch_description():
             package='ublox_gps',
             executable='ublox_gps_node',
             name='gnss',
-            namespace='/m8u',
             output='both'
         )
     ])
